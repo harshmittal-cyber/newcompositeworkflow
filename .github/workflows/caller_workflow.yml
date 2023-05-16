@@ -1,13 +1,6 @@
 name: caller_workflow
 on: 
  workflow_dispatch:
-  inputs:
-   number1:
-    description: 'Enter first number'     
-    required: true
-   number2:
-    description: 'Enter second number'     
-    required: true
 
 
 jobs:
