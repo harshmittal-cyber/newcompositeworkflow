@@ -16,10 +16,10 @@ jobs:
  calling-addition-job:
   uses: goyal20nikita/ReusableWorkflow/.github/workflows/addition.yml@main
   with:
-   number1: ${{env.number1}}
-   number2: ${{env.number2}}
+   number1: 2
+   number2: 4
  calling-subtraction-job:
   uses: goyal20nikita/ReusableWorkflow/.github/workflows/subtraction.yml@main
   with:
-   number1: ${{env.number1}}
-   number2: ${{env.number1}}
+   number1: 4
+   number2: 3
