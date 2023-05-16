@@ -8,18 +8,26 @@ on:
     type: number
    number2:
     description: 'Enter second number'     
-    required: true
+    required: true  
     type: number
+  outputs:
+   sum:
+     description: "addition value"
+     value: ${{ jobs.subtraction.outputs.output1 }}
+  
 #env:
- #number1: ${{ github.event.inputs.number1 }}
- #number2: ${{ github.event.inputs.number2 }}
+ #number1: ${{ inputs.number1 }}
+# number2: ${{ inputs.number2 }}
 
 jobs:
  subtraction:
    runs-on: ubuntu-latest
+   outputs:
+      output1: ${{ steps.step1.outputs.subtraction }}
    steps:
    - uses: actions/checkout@v3
-   - run: |
-      echo "Subtract two numbers ${{ inputs.number1 }} and  ${{ inputs.number2 }}"
-      subtraction=`expr ${{ inputs.number1 }} * {{ inputs.$number2 }}`
-      echo "$subtraction"
+   - id: step1
+     run: |
+      echo "subtract two numbers ${{ inputs.number1 }} and  ${{ inputs.number2 }}"
+      subtract=`expr ${{ inputs.number1 }} - ${{ inputs.number2 }} `
+      echo "subtraction=$subtract"
