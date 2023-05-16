@@ -8,9 +8,9 @@ on:
    number2:
     description: 'Enter second number'     
     required: true
-env:
- number1: ${{ github.event.inputs.number1 }}
- number2: ${{ github.event.inputs.number2 }}
+# env:
+#  number1: ${{ github.event.inputs.number1 }}
+#  number2: ${{ github.event.inputs.number2 }}
 
 jobs:
  calling-addition-job:
