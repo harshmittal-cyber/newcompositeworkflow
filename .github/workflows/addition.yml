@@ -19,8 +19,6 @@ on:
 jobs:
  addition:
    runs-on: ubuntu-latest
-   outputs:
-      output1: ${{ steps.step1.outputs.summation }}
    steps:
    - uses: actions/checkout@v3
    - id: step1
