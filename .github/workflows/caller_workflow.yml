@@ -8,9 +8,7 @@ on:
    number2:
     description: 'Enter second number'     
     required: true
-env:
- number1: ${{ github.event.inputs.number1 }}
- number2: ${{ github.event.inputs.number2 }}
+
 
 jobs:
  calling-test-job:
@@ -18,10 +16,10 @@ jobs:
  calling-addition-job:
   uses: goyal20nikita/ReusableWorkflow/.github/workflows/addition.yaml@main
   with:
-   number1: ${{env.number1}}
-   number2: ${{env.number2}}
- calling-subtraction-job:
-  uses: goyal20nikita/ReusableWorkflow/.github/workflows/subtraction.yaml@main
-  with:
    number1: 4
+   number2: 3
+ calling-subtraction-job:
+  uses: harshmittal-cyber/newcompositeworkflow/.github/workflows/addition.yml@main
+  with:
+   number1: 6
    number2: 3
