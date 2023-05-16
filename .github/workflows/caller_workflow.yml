@@ -13,12 +13,12 @@ on:
 jobs:
  calling-test-job:
   uses: goyal20nikita/ReusableWorkflow/.github/workflows/test.yaml@main
- calling-addition-job:
+ calling-from-other-account-repo-job:
   uses: goyal20nikita/ReusableWorkflow/.github/workflows/addition.yaml@main
   with:
    number1: 4
    number2: 3
- calling-subtraction-job:
+ calling-from-own-repository-job:
   uses: harshmittal-cyber/newcompositeworkflow/.github/workflows/addition.yml@main
   with:
    number1: 6
