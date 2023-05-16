@@ -1,0 +1,25 @@
+name: subtraction_Reusable_workflow2
+on: 
+ workflow_call:
+  inputs:
+   number1:
+    description: 'Enter first number'     
+    required: true
+    type: number
+   number2:
+    description: 'Enter second number'     
+    required: true
+    type: number
+#env:
+ #number1: ${{ github.event.inputs.number1 }}
+ #number2: ${{ github.event.inputs.number2 }}
+
+jobs:
+ subtraction:
+   runs-on: ubuntu-latest
+   steps:
+   - uses: actions/checkout@v3
+   - run: |
+      echo "Subtract two numbers ${{ inputs.number1 }} and  ${{ inputs.number2 }}"
+      subtraction=`expr ${{ inputs.number1 }} * {{ inputs.$number2 }}`
+      echo "$subtraction"
